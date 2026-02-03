@@ -17,15 +17,15 @@ jobs:
 
       - name: Terraform Init
         run: |
-          cd env/dev
+          cd infra/env/dev
           terraform init
 
       - name: Terraform Validate
         run: |
-          cd env/dev
+          cd infra/env/dev
           terraform validate
 
       - name: Terraform Plan
         run: |
-          cd env/dev
+          cd infra/env/dev
           terraform plan
