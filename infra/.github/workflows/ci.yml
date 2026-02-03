@@ -27,5 +27,8 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          cd infra/env/dev
-          terraform plan
+            cd infra/env/dev
+            terraform plan -var-file="values.tfvars"
+
+
+          

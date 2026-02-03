@@ -19,8 +19,8 @@ resource "aws_ebs_volume" "storage"{
     type= var.ebs_type
 }
 
-resource "aws_volume_attachment" "attach_storage"{
-    device= "/dev/sdh"
-    volume_type= var.volume_type
-    volume_size= var.volume_size
+resource "aws_volume_attachment" "attach_storage" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.storage.id
+  instance_id = aws_instance.web.id
 }

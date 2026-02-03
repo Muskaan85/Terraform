@@ -1,4 +1,7 @@
-output "aws_instance.web" {
-    instance_id = aws_instance.web.id
-    volume_id = aws_ebs_volume.web.id
+output "instance_id" {
+  value = aws_instance.web.id
+}
+
+output "volume_id" {
+  value = aws_ebs_volume.storage.id
 }
