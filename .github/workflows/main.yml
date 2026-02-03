@@ -1,9 +1,6 @@
 name: Terraform CI
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   terraform:
@@ -30,4 +27,8 @@ jobs:
 
       - name: Terraform Plan
         run: |
-          cd infra/env/dev
+            cd infra/env/dev
+            terraform plan -var-file="values.tfvars"
+
+
+          
